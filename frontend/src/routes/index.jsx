@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import Home from "../pages/Home";
+import NotFound from "../cmponents/NotFound";
 
 const routes = createBrowserRouter([
   {
@@ -7,8 +9,8 @@ const routes = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/home",
-        element: <App />,
+        path: "/",
+        element: <Home />,
       },
     ],
   },
@@ -20,10 +22,10 @@ const routes = createBrowserRouter([
   //     path: "/signup",
   //     element: <Signup />,
   //   },
-  //   {
-  //     path: "*",
-  //     element: <NotFound />,
-  //   },
+  {
+    path: "*",
+    element: <NotFound />,
+  },
 ]);
 
 export default routes;
