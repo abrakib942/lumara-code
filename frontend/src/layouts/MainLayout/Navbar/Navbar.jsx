@@ -7,7 +7,7 @@ import "./navbar.css";
 
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import logo from "../../assets/Subtract.png";
+import logo from "../../../assets/Subtract.png";
 
 const Navbar = () => {
   const [visible, setVisible] = useState(false);

@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 } */
+
+.ant-layout-sider .ant-menu-item {
+  margin-bottom: 20px;
+}
+
+.ant-layout-sider .ant-menu-item-selected {
+  background-color: #00b07426;
+  color: #00b074;
+  font-weight: bold;
+}
