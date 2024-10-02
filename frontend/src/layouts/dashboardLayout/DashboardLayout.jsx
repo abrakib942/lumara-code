@@ -25,7 +25,7 @@ const DashboardLayout = () => {
   const logOut = () => {
     removeUserInfo("accessToken");
 
-    navigate("/login");
+    navigate("/");
   };
 
   return (
@@ -60,6 +60,7 @@ const DashboardLayout = () => {
           </div>
           <div className="flex items-center gap-5">
             <img src={headerIcons} alt="" />
+            <div className="font-bold">{userData?.data.name}</div>
             <CustomButton onClick={logOut} className="">
               {" "}
               Log out{" "}

@@ -4,7 +4,7 @@ export const userApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
     getAllUser: build.query({
       query: (arg) => ({
-        url: "/users",
+        url: "/user",
         params: arg,
         method: "GET",
       }),
@@ -12,14 +12,14 @@ export const userApi = baseApi.injectEndpoints({
     }),
     getSingleUser: build.query({
       query: (userId) => ({
-        url: `/users/${userId}`,
+        url: `/user/${userId}`,
         method: "GET",
       }),
       providesTags: ["user"],
     }),
     updateUser: build.mutation({
       query: (data) => ({
-        url: `/users/${data.userId}`,
+        url: `/user/${data.userId}`,
         method: "PATCH",
         data: data.data,
       }),
@@ -27,7 +27,7 @@ export const userApi = baseApi.injectEndpoints({
     }),
     deleteUser: build.mutation({
       query: (userId) => ({
-        url: `/users/${userId}`,
+        url: `/user/${userId}`,
         method: "DELETE",
       }),
       invalidatesTags: ["user"],

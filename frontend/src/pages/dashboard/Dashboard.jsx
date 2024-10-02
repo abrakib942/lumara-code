@@ -5,8 +5,13 @@ import icon_group from "../../assets/Icon_group.png";
 import bottomArrow from "../../assets/bottomArrow.png";
 import topArrow from "../../assets/topArrow.png";
 import { Card } from "antd";
+import { getUserInfo } from "../../utils/authService";
+import { useGetSingleUserQuery } from "../../redux/api/userApi";
 
 const Dashboard = () => {
+  const { userId } = getUserInfo();
+
+  const { data: userData } = useGetSingleUserQuery(userId);
   return (
     <div className="">
       <div className="px-5">
@@ -14,7 +19,7 @@ const Dashboard = () => {
           Good Morning!
         </div>
         <div className="text-[#A3A3A3] text-[18px]">
-          Hi, Sara. Welcome back!
+          Hi, {userData?.data?.name}. Welcome back!
         </div>
       </div>
       <div className="flex items-center gap-5 my-12 ">

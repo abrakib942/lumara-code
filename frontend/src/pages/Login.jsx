@@ -23,16 +23,15 @@ const Login = () => {
 
       console.log("ress", res);
 
-      if (res?.data?.data?.accessToken) {
+      if (res?.data?.token) {
+        localStorage.setItem("accessToken", res?.data?.token);
         message.success({
           content: "Login successful!",
           key: "login-loading",
           duration: 2,
         });
-        navigate("/");
+        navigate("/dashboard");
       }
-
-      localStorage.setItem("accessToken", res?.data?.token);
 
       if (res?.error) {
         message.error(res?.error?.data?.message);
